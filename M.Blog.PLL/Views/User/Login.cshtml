@@ -1,0 +1,22 @@
+﻿
+@using M.Blog.PLL.Models.User
+
+@model LoginViewModel
+
+<h2>Вход в приложение</h2>
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Email адрес</label>
+        <input type="email" class="form-control" asp-for="Email">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Пароль</label>
+        <input type="password" class="form-control" asp-for="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Войти</button>
+       <p></p>
+        <span>Еще не аккаунта? </span>
+        @Html.ActionLink("Зарегистрируйтесь", "Create", "User")
+
+</form>

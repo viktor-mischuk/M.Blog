@@ -1,0 +1,25 @@
+﻿@using M.Blog.PLL.Models.Post
+@model PostViewModel
+
+
+<h1>Добавление статьи</h1>
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Заголовок</label>
+        <input type="text" class="form-control" asp-for="Title" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Контент</label>
+        <textarea type="text" class="form-control" asp-for="Content"></textarea>
+    </div>
+
+
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+        <p></p>
+        @Html.ActionLink("Перейти к списку всех статей", "Index", "Post")
+    </div>
+
+</form>

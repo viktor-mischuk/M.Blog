@@ -1,0 +1,22 @@
+﻿@using M.Blog.PLL.Models.Role
+@model RoleViewModel
+
+<h1>Изменение роли</h1>
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Название</label>
+        <input type="text" class="form-control" asp-for="Name" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Описание</label>
+        <textarea type="text" class="form-control" asp-for="Description"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+        <p></p>
+        @Html.ActionLink("Перейти к списку всех ролей", "Index", "Role")
+    </div>
+
+</form>

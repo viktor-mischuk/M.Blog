@@ -1,0 +1,28 @@
+﻿@using M.Blog.PLL.Models.User
+@model List<UserViewModel>
+
+<h1>Все пользователи</h1>
+
+@Html.ActionLink("Добавить пользователя", "Create", "User")
+<p></p>
+@if(Model.Count > 0)
+{
+    foreach(var user in Model)
+    {
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@user.Name</h5>
+                @if(user.RoleNames.Count > 0)
+                {
+                    foreach(var role in user.RoleNames)
+                    {
+                        <span class="role-name">@role</span>
+                    }
+                    
+                }
+                <h6 class="card-subtitle mb-2 text-muted">@user.Email</h6>
+                @Html.ActionLink("Подробнее..", "GetByEmail", "User", new { email = @user.Email })
+            </div>
+        </div>
+    }
+}

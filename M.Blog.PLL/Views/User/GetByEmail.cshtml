@@ -1,0 +1,25 @@
+﻿@using M.Blog.PLL.Models.User
+@model UserViewModel
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th scope="row">Имя пользователя</th>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <th scope="row">Email</th>
+            <td>@Model.Email</td>
+
+        </tr>
+        <tr>
+            <th scope="row">Роли</th>
+            <td>
+                @foreach(var role in Model.RoleNames)
+                {
+                    <span>@role</span>
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>

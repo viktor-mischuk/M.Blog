@@ -1,0 +1,30 @@
+﻿@using M.Blog.PLL.Models.Post
+@model List<PostViewModel>
+
+<h1>Все статьи</h1>
+
+@Html.ActionLink("Добавить статью", "Create", "Post")
+<p></p>
+@if (Model.Count > 0)
+{
+    foreach (var post in Model)
+    {
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@post.Title</h5>
+                
+                @if (post.Tags.Count > 0)
+                {
+                    foreach (var tag in post.Tags)
+                    {
+                        
+                        <span class="role-name">@tag</span>
+                    }
+
+                }
+                @Html.ActionLink("Подробнее..", "GetPost", "Post", new{ postTitle = @post.Title})
+
+            </div>
+        </div>
+    }
+}
